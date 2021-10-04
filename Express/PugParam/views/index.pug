@@ -1,0 +1,41 @@
+include header
+
+html 
+    head 
+        title hello pug
+
+    body 
+        =job
+        br
+        span(style="color:red; background:#000;") hello pug 
+        br   
+        p
+          | Hello #{name}
+          //| Hello #{job}
+
+        - var hello = "Hello Front";
+         //---------------------------------------------------
+
+        p #{hello.toUpperCase()} 
+        =hello.toUpperCase()
+
+        br
+        br
+          
+          
+        include footer
+        br
+        hr
+        -var count = 1;
+        if !count
+            | No count 
+        else if count === 1
+            | Count 1
+        else 
+            | Count not 1        
+
+        hr
+
+        ul
+           each val, index in ['zero', 'one', 'two']
+            li= index + ': ' + val
